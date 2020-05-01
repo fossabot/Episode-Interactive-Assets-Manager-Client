@@ -19,11 +19,18 @@
 
 package org.patrickbelanger;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * Episode Interactive Assets Manager
  * 
+ * Application entry point class
  * @author Patrick Belanger
  *
  */
@@ -33,5 +40,18 @@ public class Application {
 
     public static void main(String[] args) {
 	SpringApplication.run(Application.class, args);
+	System.setProperty("java.awt.headless", "false");
+	/* TODO: Only in production mode (uncomment as soon it's managed from the .properties file) */
+	//launchWebBrowser();
     }
+    
+    public static void launchWebBrowser() {
+        try {
+            URI homepage = new URI("http://localhost:8080/");
+            Desktop.getDesktop().browse(homepage);
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
 }
