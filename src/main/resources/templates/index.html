@@ -86,9 +86,10 @@ Copyright © 2020, Patrick Belanger. All rights reserved.
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand" href="index.html">EPISODE INTERACTIVE ASSETS MANAGER</a>
-            </div>           
+            </div>   
         </div>
     </nav>
+        
     <!-- #Top Bar -->
     <section>
         <!-- Left Sidebar -->
@@ -193,11 +194,85 @@ Copyright © 2020, Patrick Belanger. All rights reserved.
 	<section class="content">
         <!-- Main interface -->
         <div class="container-fluid">
-            <div class="block-header">
-                <h2>DASHBOARD</h2>
-            </div>
+            
 
 	        <div id="sectionMainMenu" class="row clearfix">
+                
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body">
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#sectionMainMenu_createNewStory" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">CREATE NEW STORY</a></li>
+                                    <li role="presentation" class=""><a href="#sectionMainMenu_manageAssets" aria-controls="messageAsserts" role="tab" data-toggle="tab" aria-expanded="false">MANAGE ASSETS</a></li>
+                                    <li role="presentation" class=""><a href="#sectionMainMenu_settings" aria-controls="settings" role="tab" data-toggle="tab" aria-expanded="false">SETTINGS</a></li>
+                                    <li role="presentation" class=""><a href="#sectionMainMenu_support" aria-controls="support" role="tab" data-toggle="tab" aria-expanded="false">SUPPORT</a></li>
+                                    <li role="presentation" class=""><a href="#sectionMainMenu_about" aria-controls="about" role="tab" data-toggle="tab" aria-expanded="false">ABOUT</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade active in" id="sectionMainMenu_createNewStory">
+                                        
+                                        <!--  Create new story -->
+										<form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="storyName" class="col-sm-2 control-label">Story name</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        <input type="text" class="form-control" id="storyName" name="storyName" placeholder="Story name" value="" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="storyDescription" class="col-sm-2 control-label">Story description</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        <input type="text" class="form-control" id="storyDescription" name="storyDescription" placeholder="Story description" value="" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="storyUrl" class="col-sm-2 control-label">Story URL</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        <input type="text" class="form-control" id="storyUrl" name="storyUrl" placeholder="Story url" value="" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button type="submit" class="btn btn-danger">CREATE NEW STORY</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="sectionMainMenu_manageAssets">
+                                        
+                                        <!--  Manage tab -->
+                                        
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="sectionMainMenu_settings">
+                                        
+                                        <!-- Settings tab -->
+                                        
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="sectionMainMenu_support">
+                                        
+                                        <!-- Support tab -->
+                                        
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="sectionMainMenu_about">
+                                        
+                                        <!-- About tab -->
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 
             </div>
                   
