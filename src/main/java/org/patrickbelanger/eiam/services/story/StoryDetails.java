@@ -17,21 +17,19 @@
  * under the License.
  */
 
-package org.patrickbelanger.services.story;
+package org.patrickbelanger.eiam.services.story;
 
-import java.util.List;
-
-import org.patrickbelanger.eiam.model.StoryDetail;
+import org.patrickbelanger.eiam.model.Story;
 
 /**
  * 
  * @author Patrick Belanger
  *
  */
-public interface Story {
+public interface StoryDetails {
 
-    List<StoryDetail> findAll();
+    Story getStoryDetails(Long id);
 
-    StoryDetail getStoryDetail();
+    int createStoryDetails(Story story);
     
 }

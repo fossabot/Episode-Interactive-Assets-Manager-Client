@@ -24,16 +24,26 @@ package org.patrickbelanger.eiam.model;
  * @author Patrick Belanger
  *
  */
-public class StoryDetail {
+public class Story {
 
+    private int id;
     private String storyName;
     private String storyDescription;
     private String storyUrl;
     
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getStoryName() {
         return storyName;
     }
    
+    
     public void setStoryName(String storyName) {
         this.storyName = storyName;
     }

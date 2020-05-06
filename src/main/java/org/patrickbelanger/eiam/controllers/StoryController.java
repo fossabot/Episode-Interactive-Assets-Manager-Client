@@ -17,15 +17,18 @@
  * under the License.
  */
 
-package org.patrickbelanger.controllers;
+package org.patrickbelanger.eiam.controllers;
 
-import java.util.List;
-
-import org.patrickbelanger.eiam.model.StoryDetail;
-import org.patrickbelanger.services.story.Story;
+import org.patrickbelanger.eiam.model.Story;
+import org.patrickbelanger.eiam.services.story.StoryDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -38,16 +41,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class StoryController {
 
     @Autowired
-    private Story service;
+    private StoryDetails service;
     
-    @GetMapping
-    public List<StoryDetail> findAll() {
-	return service.findAll();
+    @GetMapping("/story/{id}")
+    public Story getStoryDetails(@PathVariable("id") Long id) {
+	return service.getStoryDetails(id);
     }
     
-    @GetMapping("/story")
-    public StoryDetail getStoryDetail() {
-	return service.getStoryDetail();
+    @PostMapping("/story")
+    @ResponseStatus(HttpStatus.CREATED)
+    public int storeEmployee(@RequestBody Story story) {
+	return service.createStoryDetails(story);
     }
     
 }

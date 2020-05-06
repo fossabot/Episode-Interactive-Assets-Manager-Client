@@ -17,12 +17,10 @@
  * under the License.
  */
 
-package org.patrickbelanger.services.story;
+package org.patrickbelanger.eiam.services.story;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.patrickbelanger.eiam.model.StoryDetail;
+import org.patrickbelanger.eiam.model.Story;
+import org.patrickbelanger.eiam.services.common.AbstractServices;
 import org.springframework.stereotype.Service;
 
 /**
@@ -31,18 +29,18 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class StoryService implements Story {
+public class StoryDetailsService extends AbstractServices implements StoryDetails {
 
     @Override
-    public List<StoryDetail> findAll() {
-	// TODO Auto-generated method stub
-	return new ArrayList<>();
+    public Story getStoryDetails(Long id) {
+	final String sql = "SELECT * FROM STORY_DETAILS WHERE ID=?";
+	return (Story) read(sql, new Object[] { id }, Story.class);
     }
-    
+
     @Override
-    public StoryDetail getStoryDetail() {
-	// TODO Auto-generated method stub
-	return new StoryDetail();
+    public int createStoryDetails(Story story) {
+	final String sql = "INSERT INTO STORY_DETAILS (STORY_DESCRIPTION, STORY_NAME, STORY_URL) VALUES(?, ?, ?)";
+	return create(sql, new Object[] { story.getStoryDescription(), story.getStoryName(), story.getStoryUrl() });
     }
 
 }
